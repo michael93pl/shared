@@ -1,0 +1,41 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'corepages/style.css' %}" type="text/css">
+          <title>Bootstrap Example</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <br>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">Eat me</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="dropdown">
+                <ul class="dropdown-menu">
+                </ul>
+              </li>
+            </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Sign in</a></li>
+                    <li><a href="{% url 'signup' %}">Sign up</a></li>
+                    {% endif %}
+                </ul>
+            </ul>
+          </div>
+        </nav>
+    {% block content %}
+
+    {% endblock %}
+    </body>
+</html>
