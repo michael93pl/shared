@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-from user.views import Index, SignUp, LogIn, LogOut, ChangePassword
+from user.views import activate, Index, SignUp, LogIn, LogOut, ChangePassword
 
 
 urlpatterns = [
@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^login/', LogIn.as_view(), name='login'),
     url(r'^logout/$', LogOut.as_view(), name='logout'),
     url(r'^password/$', ChangePassword.as_view(), name='change_password'),
-    #url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-  #      activate, name='activate'),
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        activate, name='activate'),
 
 ]
