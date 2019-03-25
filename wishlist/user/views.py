@@ -125,7 +125,7 @@ class ChangePassword(View):
 
   #      context = {
   #          'user_data': user_data,
-  #          'form': form,
+  #          'form': form,cd .
  #           'user_details': user_details
  #       }
  #       return render(request, 'profile.html', context)
