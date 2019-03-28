@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-from user.views import activate, Index, SignUp, LogIn, LogOut, ChangePassword
+from apps.user.views import activate, Index, SignUp, LogIn, LogOut, ChangePassword
 
 
 urlpatterns = [

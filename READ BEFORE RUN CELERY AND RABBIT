@@ -1,0 +1,4 @@
+oskryptować deploy celery i rabbita na serwerze wraz ze skryptami do odświeżania tego ! 
+sudo rabbitmq-server
+
+celery -A apps.user worker -l info

@@ -10,7 +10,7 @@ from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
 
-from user.messages.messages import send_activation_link
+from apps.user.messages.messages import send_activation_link
 
 from .forms import SignUpForm, LogInForm, ChangePasswordForm
 from .models import User
