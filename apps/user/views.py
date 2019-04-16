@@ -29,21 +29,17 @@ class SignUp(View):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.is_active = True
             user.save()
             receiver = form.cleaned_data.get('email')
             send_activation_link(request, user, receiver)
-
             return render(request, 'registration/after_signup.html')
 
         context = {
             'form': form
         }
-        print(form)
         return render(request, 'registration/signup.html', context)
 
     def get(self, request):
-
         form = SignUpForm()
         return render(request, 'registration/signup.html', {'form': form})
 
